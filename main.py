@@ -43,5 +43,5 @@ for epoch in range(1, 10+1):
 
   loss_curve.append(total_loss)
 
-torch.save(model, "saved/bruh.pth")
+  torch.save(model, f"saved/bruh{epoch}.pth")
 

@@ -7,13 +7,14 @@ ds = WikiText2()
 tokenizer = BasicEnglishTokenizer()
 vocabulary = build_vocab(ds, tokenizer, min_freq=50) 
 
-model = torch.load("saved/bruh.pth", weights_only=False) 
+model = torch.load("saved/bruh10.pth", weights_only=False) 
 embeddings = model.embedding.weight.detach().clone().numpy()
 
 pca = PCA(n_components=2)
 reduced = pca.fit_transform(embeddings)  
 
-words = ["boy", "girl", "king", "queen", "mother", "father"]
+words = ["boy", "girl", "king", "queen", "mother", "father", "man", "woman",
+         "brother", "sister", "son", "daughter", "prince", "princess", "husband", "wife"]
 
 for word in words:
     idx = vocabulary.stoi[word]
