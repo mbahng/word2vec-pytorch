@@ -4,6 +4,7 @@ from torch.nn import Module
 class CBOW(Module): 
 
   def __init__(self, embedding_dim: int, vocab_size: int): 
+    super().__init__()
     self.embedding_dim = embedding_dim 
     self.vocab_size = vocab_size  
 
